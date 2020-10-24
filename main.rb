@@ -121,8 +121,6 @@ end
 
 
 delete '/logout' do
-  #destroy the session
   session[:user_id]=nil
-
   redirect '/login'
 end 

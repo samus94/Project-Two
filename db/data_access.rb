@@ -1,7 +1,7 @@
 
 
 def run_sql(sql)
-    db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'name_of_database'})
+    db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'gameshareit'})
     result = db.exec(sql)
     db.close
     return result
