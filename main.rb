@@ -6,12 +6,7 @@ require 'bcrypt'
 require 'httparty'
 enable :sessions
 
-# def run_sql(sql)
-#   db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'name_of_database'})
-#   result = db.exec(sql)
-#   db.close
-#   return result
-# end
+
 
 def logged_in?()
   if session[:user_id]

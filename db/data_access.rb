@@ -7,12 +7,12 @@ def run_sql(sql)
     return result
 end
 
-def run_sql(sql)
-    db = PG.connect(dbname: 'gameshareit')
-    results= db.exec(sql)
-    db.close
-    return results
-end
+# def run_sql(sql)
+#     db = PG.connect(dbname: 'gameshareit')
+#     results= db.exec(sql)
+#     db.close
+#     return results
+# end
 
 def find_user_by_email(email)
     results = run_sql("select * from users where email = '#{email}';")
