@@ -1,6 +1,6 @@
 require "bcrypt"
 require "pg"
-require_relative '/data_access.rb'
+require_relative 'data_access.rb'
 
   
 email = "dt@ga.co"
