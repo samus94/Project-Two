@@ -8,6 +8,17 @@
 </head>
 <body>
 
+   <% if logged_in?%>
+    logged in as <%= current_user()['email']%>
+                 
+    <form action="/logout" method="post">
+    <input type="hidden" name="_method" value="delete">
+   <button>Logout</button>
+    </form>
+
+  <%end%>
+
+
   <%= yield %>
 
 </body>

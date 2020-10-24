@@ -1,0 +1,8 @@
+<h1><%= game['name']%> </h1>
+
+<form action="/games/<%= dish["id"] %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Delete</button>
+</form>
+
+<a href="/games/<%= dish["id"]%>/edit">edit</a>
