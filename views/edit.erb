@@ -1,12 +1,18 @@
 <h1>Edit Game Post</h1>
 
 <form action="/games/<%= game['id'] %>" method="post">
+    <div class ="name_image_box">
     <input type="hidden" name="_method" value="patch">
     <label for=""> name </label>
     <input type="text" name="name" value = "<%=game['name']%>">
     <label for="">image url</label>
     <input type="text" name="image_url" value = "<%=game['image_url']%>">
-    <label for="">description</label>
-    <input type="text" name="description" value = "<%=game['description']%>">
+    </div>
+  
+    <div class="description_box">
+    <label for="">Description</label>
+    <textarea name="description" cols="60" rows="15" wrap="soft" maxlength="999" style="overflow:hidden;" value = "<%=game['description']%>"></textarea>
+    </div>
     <button>Update</button>
+    
 </form>

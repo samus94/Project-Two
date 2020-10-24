@@ -8,17 +8,30 @@
 </head>
 <body>
 
-   <% if logged_in?%>
+  
+  <div class="navbar_div">
+
+  <ul>
+     <% if logged_in?%>
     logged in as <%= current_user()['email']%>
-                 
-    <form action="/logout" method="post">
-    <input type="hidden" name="_method" value="delete">
-   <button>Logout</button>
-    </form>
 
-  <%end%>
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>Logout</button>
+        
+      </form>
 
+     <%end%>
+
+  <li><a href="/">Home</a></li>
+  <li><a href="/games/new">share a new game</a></li>
+  </ul>
+
+  </div>
+
+  <div class="content_div">
   <%= yield %>
+  </div>
 
 </body>
 </html>

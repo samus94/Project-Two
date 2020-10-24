@@ -1,8 +1,24 @@
 body {
     background-color: mistyrose;
+    display: grid;
+    grid-template-columns: .5fr 2fr;
 }
 
 img {
-    height: 300px;
-    width: 300px;
+    height: auto;
+    width: 600px;
+}
+
+.content_div {
+    width: 100%;
+    margin: auto;
+}
+
+.op_thoughts {
+    background-color: antiquewhite;
+    width: 600px;
+}
+
+.description_box {
+    margin-top: 25px;
 }

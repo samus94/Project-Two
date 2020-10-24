@@ -6,12 +6,12 @@ require 'bcrypt'
 require 'httparty'
 enable :sessions
 
-def run_sql(sql)
-  db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'name_of_database'})
-  result = db.exec(sql)
-  db.close
-  return result
-end
+# def run_sql(sql)
+#   db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'name_of_database'})
+#   result = db.exec(sql)
+#   db.close
+#   return result
+# end
 
 def logged_in?()
   if session[:user_id]
@@ -57,6 +57,7 @@ post '/games' do
 
 end
 
+
 delete '/games/:id' do
   # params ["id"]
   db = PG.connect(dbname: 'gameshareit')
@@ -100,6 +101,24 @@ post '/login' do
     erb :login
   end
 end
+
+get '/login/newacc' do
+  erb :newacc
+end
+
+post '/login/newacc' do
+
+  email = "#{params["email"]}"
+  password_digest = BCrypt::Password.create("#{params["password"]}")
+
+  sql = "insert into users (email, password_digest) values ('#{email}','#{password_digest}');"
+
+  run_sql(sql)
+  
+  redirect "/"
+  
+end
+
 
 delete '/logout' do
   #destroy the session

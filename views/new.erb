@@ -1,13 +1,16 @@
 <h1>Game Intro Here</h1>
 
 <form action="/games" method="post">
+    <div class ="name_image_box">
     <label for=""> Name </label>
     <input type="text" name="name">
     <label for="">Image URL</label>
     <input type="text" name="image_url">
+    </div>
+
+    <div class="description_box">
     <label for="">Description</label>
-    <input type="text" name="description">
-    <button>upload</button>
-
-
+    <textarea name="description" cols="60" rows="15" wrap="soft" maxlength="999" style="overflow:hidden;" resize:none;></textarea>
+    </div>
+    <button>Upload</button>
 </form>
