@@ -39,9 +39,9 @@ get '/games/new' do
 end
 
 get '/games/:id' do
-  if !logged_in?
-    redirect '/login'
-  end
+  # if !logged_in?
+  #   redirect '/login'
+  # end
 
   game = find_game_by_id(params['id'])
   erb :details, locals: {game: game}
@@ -116,7 +116,7 @@ post '/login/newacc' do
   run_sql(sql)
   
   redirect "/"
-  
+
 end
 
 

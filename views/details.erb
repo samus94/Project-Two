@@ -6,10 +6,11 @@
 <p><%= game["description"]%></p>
 </section>
 
-
+<% if logged_in?%>
 <form action="/games/<%= game["id"] %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <button>Delete</button>
 </form>
 
 <a href="/games/<%= game["id"]%>/edit">edit</a>
+<%end%>
