@@ -10,12 +10,13 @@ body {
 
 img {
     height: auto;
-    width: 600px;
+    width: 400px;
 }
 
 .content_div {
-    width: 50%;
-    margin:auto;
+    width: 95%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .op_thoughts {
@@ -50,10 +51,11 @@ li {
 
 .loginBox {
     background-color: rgba(0, 0, 0, 0.3);
-    width: 100%;
+    width: 95%;
     height: 100%;
     border-radius: 9px;
     padding: 5px 5px 5px 5px;
+    margin-right: 10px;
 }
 
 .shareBox {
@@ -66,10 +68,17 @@ li {
 
 .aboutMe {
     background-color: rgba(0, 0, 0, 0.3);
-    width: 100%;
+    width: 95%;
     height: 100%;
     border-radius: 9px;
     padding: 5px 5px 5px 5px;
+    margin-right: 10px;
+}
+
+.gamediv {
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 

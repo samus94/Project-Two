@@ -1,11 +1,13 @@
 <h1>Welcome to Gameshareit</h1>
 
 
-
+<div class="gamediv">
 <% games.each do |game|%>
-    
+    <div class="individualgame">
     <p><a href="/games/<%= game["id"] %>"><%= game["name"] %></a></p>
     
     <img src="<%= game["image_url"] %>" alt="">
-
+    </div>
 <%end%>
+
+</div>
