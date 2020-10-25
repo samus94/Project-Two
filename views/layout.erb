@@ -20,22 +20,91 @@
 
   <div class="navbar_div">
 
-  <ul class="left_nav">
+    <ul class="left_nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/games/new">share a new game</a></li>
+    </ul>
+   
+    <div class="dropdown">
+      <button onclick ="myFunction()" class="dropbtn">Action</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#Platformer">Platformer</a>
+        <a href="#FPS">First Person Shooter</a>
+        <a href="#Stealth">Stealth</a>
+        <a href="#Battle Royale">Battle Royale</a>
+      </div>
+    </div>
+    
+    <div class="dropdown">
+      <button onclick ="myFunction()" class="dropbtn">RPG</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#mmorpg">MMORPG</a>
+        <a href="#arpg">Action RPG</a>
+        <a href="#sandbox">Sandbox RPG</a>
+        <a href="#jrpg">JRPG</a>
+      </div>
+    </div>
+    
+    <div class="dropdown">
+      <button onclick ="myFunction()" class="dropbtn">Sports</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#racing">Racing</a>
+        <a href="#football">Football</a>
+        <a href="#americanFootball">American Football</a>
+        <a href="#basketball">Basketball</a>
+      </div>
+    </div>
+    
+    <div class="dropdown">
+      <button onclick ="myFunction()" class="dropbtn">Strategy</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#rts">Real-time Strategy</a>
+        <a href="#moba">MOBA</a>
+        <a href="#tbs">Turn-based Strategy</a>
+        <a href="#4xg">4X Game</a>
+      </div>
+    </div>
 
+    <div class="dropdown">
+      <button onclick ="myFunction()" class="dropbtn">Simulation</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#milsim">Mil-Sim</a>
+        <a href="#lsim">Life Sim</a>
+        <a href="#vsim">Vehicle Sim</a>
+        <a href="#citybuilder">Construction and Management Sim</a>
+      </div>
+    </div>
 
-
-    <li><a href="/">Home</a></li>
-    <li><a href="/games/new">share a new game</a></li>
-    <li>Action</li>
-    <li>RPG</li>
-    <li>FPS</li>
-    <li>Strategy</li>
-    <li>Simulation</li>
-    <li>VR</li>
-    <li>Sports</li>
-  </ul>
+    <div class="dropdown">
+           <button onclick ="myFunction()" class="dropbtn">VR</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#vrfps">FPS</a>
+        <a href="#socialvr">Social VR</a>
+        <a href="#vrsupported">VR Supported</a>
+      </div>
+    </div>
 
   </div>
+
+  <script>
+
+    function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
 
   <div class="content_div">
   <%= yield %>
