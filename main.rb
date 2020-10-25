@@ -28,6 +28,11 @@ get '/' do
   }
 end
 
+get '/about' do
+
+  erb :about
+end
+
 get '/games/new' do
   redirect '/login' unless logged_in?
   erb :new
