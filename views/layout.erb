@@ -8,23 +8,31 @@
 </head>
 <body>
 
-  
+  <div class="if_logged">
+      <% if logged_in?%> logged in as <%= current_user()['email']%>
+        <form action="/logout" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button>Logout</button>
+        </form>
+     <%end%>
+  </div><br>
+
+
   <div class="navbar_div">
 
-  <ul>
-     <% if logged_in?%>
-    logged in as <%= current_user()['email']%>
+  <ul class="left_nav">
 
-      <form action="/logout" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <button>Logout</button>
-        
-      </form>
 
-     <%end%>
 
-  <li><a href="/">Home</a></li>
-  <li><a href="/games/new">share a new game</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/games/new">share a new game</a></li>
+    <li>Action</li>
+    <li>RPG</li>
+    <li>FPS</li>
+    <li>Strategy</li>
+    <li>Simulation</li>
+    <li>VR</li>
+    <li>Sports</li>
   </ul>
 
   </div>

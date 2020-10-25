@@ -1,7 +1,8 @@
 body {
-    background-color: mistyrose;
+    background-image: url("https://pressstart.vip/images/uploads/assets/cityskyline.png");
     display: grid;
     grid-template-columns: .5fr 2fr;
+    color: white;
 }
 
 img {
@@ -10,15 +11,22 @@ img {
 }
 
 .content_div {
-    width: 100%;
-    margin: auto;
+    width: 50%;
+    margin:auto;
 }
 
 .op_thoughts {
-    background-color: antiquewhite;
     width: 600px;
 }
 
 .description_box {
     margin-top: 25px;
+}
+
+a {
+    color: white;
+}
+
+.left_nav {
+    background-color: rgba(0, 0, 0, 0.3);
 }
