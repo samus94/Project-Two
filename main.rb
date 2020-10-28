@@ -60,30 +60,23 @@ end
 
 delete '/games/:id' do
   # params ["id"]
-  db = PG.connect(dbname: 'gameshareit')
   sql = "DELETE FROM games WHERE id = #{params["id"]};"
-  db.exec(sql)
-  db.close 
-
+  run_sql(sql)
   redirect "/"
 end
 
 
 get '/games/:id/edit' do
-  db = PG.connect(dbname: 'gameshareit')
-  sql = "SELECT * FROM games WHERE id = #{params['id']};"
-  results = db.exec(sql)
-  db.close
 
+  sql = "SELECT * FROM games WHERE id = #{params['id']};"
+  results = run_sql(sql)
 
   erb :edit, locals: { game: results[0]}
 end
 
 patch '/games/:id' do
-  db = PG.connect(dbname: 'gameshareit')
   sql = "update games set name = '#{params["name"]}', image_url = '#{params["image_url"]}', description = '#{params["description"]}' where id = #{params["id"]};"
-
-  db.exec(sql)
+  run_sql(sql)
   redirect "/games/#{params["id"]}"
 end
 

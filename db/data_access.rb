@@ -33,9 +33,5 @@ def all_games()
     run_sql('select * from games;')
 end
 
-def delete_game_by_id(id)
-    db = PG.connect(ENV['DATABASE_URL'] || {dbname: 'gameshareit'})
-    db.exec(sql)
-    db.close
-end
+
     
